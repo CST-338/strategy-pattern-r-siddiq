@@ -3,7 +3,7 @@ import java.util.Objects;
 
 public abstract class Monster {
     private int hp;
-    private int xp;
+    private int xp = 10;
     private int maxHP;
     private HashMap<String, Integer> items;
 
