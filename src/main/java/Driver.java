@@ -13,8 +13,8 @@ public class Driver {
         for (Monster m : monsters) {
             System.out.println(m);
         }
-
-    //    System.out.println(monsters.get(0).attackTarget(monsters.get(1)));
-    //    System.out.println(monsters.get(1).attackTarget(monsters.get(0)));
+        // Commenting these out until we implement interfaces
+        //    System.out.println(monsters.get(0).attackTarget(monsters.get(1)));
+        //    System.out.println(monsters.get(1).attackTarget(monsters.get(0)));
     }
 }
