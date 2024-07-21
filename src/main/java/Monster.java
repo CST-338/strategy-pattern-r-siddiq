@@ -1,13 +1,20 @@
 import java.util.HashMap;
 import java.util.Objects;
 
+/**
+ * @author Rahim Siddiq
+ * 07/20/2024
+ * HW00 Strategy
+ */
+
 public abstract class Monster {
     private int hp;
     private int xp = 10;
     private int maxHP;
     private HashMap<String, Integer> items;
 
-    public Monster(int xp, int maxHP, HashMap<String, Integer> items) {
+    // constructor
+    public Monster(int maxHP, int xp, HashMap<String, Integer> items) {
         this.maxHP = maxHP;
         hp = this.maxHP;
         this.xp = xp;
@@ -57,6 +64,6 @@ public abstract class Monster {
     // toString
     @Override
     public String toString() {
-        return "Monster{}";
+        return "hp = " + getHp() + "/" + getMaxHP();
     }
 }
