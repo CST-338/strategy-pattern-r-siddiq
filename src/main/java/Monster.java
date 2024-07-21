@@ -7,6 +7,13 @@ public abstract class Monster {
     private int maxHP;
     private HashMap<String, Integer> items;
 
+    public Monster(int xp, int maxHP, HashMap<String, Integer> items) {
+        this.maxHP = maxHP;
+        hp = this.maxHP;
+        this.xp = xp;
+        this.items = items;
+    }
+
     // getters and setters
     public int getHp() {
         return hp;
