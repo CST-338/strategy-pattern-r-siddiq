@@ -1,13 +1,13 @@
+/**
+ * @author Rahim Siddiq
+ * 07/20/2024
+ * Strategy Pattern Part1
+ */
+
 package Monsters;
 
 import java.util.HashMap;
 import java.util.Objects;
-
-/**
- * @author Rahim Siddiq
- * 07/20/2024
- * HW00 Strategy
- */
 
 public abstract class Monster {
     private int hp;

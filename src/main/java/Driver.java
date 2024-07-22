@@ -1,3 +1,9 @@
+/**
+ * @author Rahim Siddiq
+ * 07/20/2024
+ * Strategy Pattern Part1
+ */
+
 import Monsters.Imp;
 import Monsters.Kobold;
 import Monsters.Monster;

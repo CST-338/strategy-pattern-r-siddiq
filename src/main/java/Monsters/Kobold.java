@@ -1,12 +1,12 @@
-package Monsters;
-
-import java.util.HashMap;
-
 /**
  * @author Rahim Siddiq
  * 07/20/2024
- * HW00 Strategy
+ * Strategy Pattern Part1
  */
+
+package Monsters;
+
+import java.util.HashMap;
 
 public class Kobold extends Monster {
     public Kobold(Integer maxHP, Integer xp, HashMap<String, Integer> items) {
