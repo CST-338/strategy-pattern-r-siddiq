@@ -18,6 +18,7 @@ public class RangedAttack implements Attack {
     @Override
     public Integer attack(Monster target) {
         String message = attacker + " uses a ranged attack on " + target;
+        System.out.println(message);
         return null;
     }
 }
