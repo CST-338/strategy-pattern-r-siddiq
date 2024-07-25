@@ -27,11 +27,14 @@ public abstract class Monster {
      * @param xp
      * @param items
      */
-    public Monster(int maxHP, int xp, HashMap<String, Integer> items) {
+    public Monster(Integer maxHP, Integer xp, HashMap<String, Integer> items) {
         this.maxHP = maxHP;
-        hp = this.maxHP;
+        this.hp = maxHP;
         this.xp = xp;
         this.items = items;
+        this.strength = getStrength();
+        this.defense = getDefense();
+        this.agility = getAgility();
     }
 
     /**
@@ -87,22 +90,26 @@ public abstract class Monster {
             min = max;
             max = temp;
         }
-        return rand.nextInt(max - min) + min;
+        return rand.nextInt(max - min + 1) + min;
     }
 
     boolean takeDamage(Integer damage) {
-        if (damage > 0) {
-            hp -= damage;
-            System.out.println("The creature was hit for [" + damage + "] damage");
+        if (hp > 0) {
+            hp = hp - damage;
+            System.out.println("The creature was hit for " + damage + " damage");
             if (hp <= 0) {
-                System.out.println("Oh no! the creature has perished");
+                System.out.println("Oh no! The creature has perished");
+                System.out.println(toString());
+                return false;
             }
         }
-        return hp > 0;
+        return true;
     }
 
     public Integer attackTarget(Monster target) {
-        return this.attack.attack(target);
+        Integer damage = attack.attack(target);
+        target.takeDamage(damage);
+        return damage;
     }
 
     @Override
