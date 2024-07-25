@@ -14,9 +14,9 @@ public class Kobold extends Monster {
     public Kobold(Integer maxHP, Integer xp, HashMap<String, Integer> items) {
         super(maxHP, xp, items);
 
-        Integer maxStr = 20;
-        Integer maxDef = 10;
-        Integer maxAgi = 6;
+        Integer maxStr = 10;
+        Integer maxDef = 5;
+        Integer maxAgi = 2;
 
         attack = new MeleeAttack(this);
         strength = super.getAttribute(strength, maxStr);
