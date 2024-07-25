@@ -6,16 +6,27 @@
 
 package Monsters;
 
-import java.util.HashMap;
-import java.util.Objects;
+import java.util.*;
 
 public abstract class Monster {
-    private int hp;
-    private int xp = 10;
-    private int maxHP;
+    /**
+     * Fields
+     */
+    private Integer hp;
+    private Integer xp = 10;
+    private Integer maxHP;
     private HashMap<String, Integer> items;
+    Integer agility;
+    Integer defense;
+    Integer strength;
+    Integer attack;
 
-    // constructor
+    /**
+     * Constructor
+     * @param maxHP
+     * @param xp
+     * @param items
+     */
     public Monster(int maxHP, int xp, HashMap<String, Integer> items) {
         this.maxHP = maxHP;
         hp = this.maxHP;
@@ -46,6 +57,35 @@ public abstract class Monster {
 
     public void setItems(HashMap<String, Integer> items) {
         this.items = items;
+    }
+
+    public Integer getAgility() {
+        return agility;
+    }
+
+    public Integer getDefense() {
+        return defense;
+    }
+
+    public Integer getStrength() {
+        return strength;
+    }
+
+    /**
+     * This method returns an integer value between min and max.
+     * then adds min back in.
+     * @param min an integer
+     * @param max an integer
+     * @return a random integer
+     */
+    Integer getAttribute(Integer min, Integer max) {
+        Random rand = new Random();
+        if (min > max) {
+            Integer temp = min;
+            min = max;
+            max = temp;
+        }
+        return rand.nextInt(max - min) + min;
     }
 
     // equals
