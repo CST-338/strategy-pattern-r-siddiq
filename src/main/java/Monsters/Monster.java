@@ -1,7 +1,7 @@
 /**
  * @author Rahim Siddiq
  * 07/20/2024
- * Strategy Pattern Part1
+ * Strategy Pattern Final
  */
 
 package Monsters;
@@ -130,19 +130,25 @@ public abstract class Monster {
         return this.attack.attack(target);
     }
 
-    // todo: need to update
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Monster)) return false;
         Monster monster = (Monster) o;
-        return Objects.equals(getItems(), monster.getItems());
+        return Objects.equals(getItems(), monster.getItems()) &&
+                Objects.equals(hp, monster.hp) &&
+                Objects.equals(xp, monster.xp) &&
+                Objects.equals(maxHP, monster.maxHP) &&
+                Objects.equals(items, monster.items) &&
+                Objects.equals(agility, monster.agility) &&
+                Objects.equals(defense, monster.defense) &&
+                Objects.equals(strength, monster.strength) &&
+                Objects.equals(attack, monster.attack);
     }
 
-    // todo: need to update
     @Override
     public int hashCode() {
-        return Objects.hashCode(getItems());
+        return Objects.hash(hp, xp, maxHP, items, agility, defense, strength, attack);
     }
 
     /**

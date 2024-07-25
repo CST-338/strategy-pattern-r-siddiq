@@ -1,7 +1,7 @@
 /**
  * @author Rahim Siddiq
  * 07/20/2024
- * Strategy Pattern Part1
+ * Strategy Pattern Final
  */
 
 package Monsters;
