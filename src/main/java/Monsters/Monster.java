@@ -126,12 +126,11 @@ public abstract class Monster {
      * This method returns the results of the attack method of the Attack object of the current
      * monster on the target.
      */
-    // todo
     public Integer attackTarget(Monster target) {
-        return null;
+        return this.attack.attack(target);
     }
 
-    // equals
+    // todo: need to update
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -140,13 +139,16 @@ public abstract class Monster {
         return Objects.equals(getItems(), monster.getItems());
     }
 
-    // hashCode
+    // todo: need to update
     @Override
     public int hashCode() {
         return Objects.hashCode(getItems());
     }
 
-    // toString
+    /**
+     * toString
+     * @return
+     */
     @Override
     public String toString() {
         return "hp = " + getHp() + "/" + getMaxHP();
