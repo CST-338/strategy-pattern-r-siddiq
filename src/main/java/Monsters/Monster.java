@@ -23,9 +23,9 @@ public abstract class Monster {
 
     /**
      * Constructor
-     * @param maxHP
-     * @param xp
-     * @param items
+     * @param maxHP maximum hit points of the monster
+     * @param xp    maximum experience points of the monster
+     * @param items items the monster has in its possession
      */
     public Monster(Integer maxHP, Integer xp, HashMap<String, Integer> items) {
         this.maxHP = maxHP;
@@ -90,14 +90,20 @@ public abstract class Monster {
             min = max;
             max = temp;
         }
-        return rand.nextInt(max - min + 1) + min;
+        return rand.nextInt(max - min ) + min;
     }
 
+    /**
+     * Apply damage to the monster
+     * @param damage the damage to apply
+     * @return false if the monster dies, true otherwise
+     */
     boolean takeDamage(Integer damage) {
         if (hp > 0) {
-            hp = hp - damage;
+            hp -= damage;
             System.out.println("The creature was hit for " + damage + " damage");
             if (hp <= 0) {
+                hp = 0;
                 System.out.println("Oh no! The creature has perished");
                 System.out.println(toString());
                 return false;
@@ -106,6 +112,11 @@ public abstract class Monster {
         return true;
     }
 
+    /**
+     * Attack a target monster
+     * @param target the target monster
+     * @return the damage dealt to the target
+     */
     public Integer attackTarget(Monster target) {
         Integer damage = attack.attack(target);
         target.takeDamage(damage);
@@ -134,7 +145,7 @@ public abstract class Monster {
 
     /**
      * toString
-     * @return
+     * @return a string representation of the monster's health points
      */
     @Override
     public String toString() {
